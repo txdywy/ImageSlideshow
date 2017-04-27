@@ -8,6 +8,7 @@
 
 import UIKit
 import ImageSlideshow
+import GoogleMobileAds
 
 class ViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet var slideshow: ImageSlideshow!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     let semaphore = DispatchSemaphore(value: 0)
     
@@ -52,7 +54,11 @@ class ViewController: UIViewController {
             }
         }
         
-        getMore()
+        self.getMore()
+        bannerView.adUnitID = "ca-app-pub-7366328858638561/2735123532"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
         //slideshow.setImageInputs(kingfisherSource)
 
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.didTap))
