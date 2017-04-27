@@ -27,11 +27,13 @@ class ViewController: UIViewController {
     //let afNetworkingSource = [AFURLSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, AFURLSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, AFURLSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
     //let alamofireSource = [AlamofireSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
     //let sdWebImageSource = [SDWebImageSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, SDWebImageSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, SDWebImageSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
+    /*
     var kingfisherSource = [KingfisherSource(urlString: "https://ig-s-b-a.akamaihd.net/hphotos-ak-xta1/t51.2885-15/e35/926192_672631346105510_1427417519_n.jpg")!,
                             KingfisherSource(urlString: "https://ig-s-b-a.akamaihd.net/hphotos-ak-xta1/t51.2885-15/e35/14240945_1171949289530600_1901063664_n.jpg")!,
                             KingfisherSource(urlString: "https://ig-s-b-a.akamaihd.net/hphotos-ak-xta1/t51.2885-15/e35/15625196_1778934412372265_3149268281412550656_n.jpg")!,
                             KingfisherSource(urlString: "https://ig-s-b-a.akamaihd.net/hphotos-ak-xta1/t51.2885-15/e35/14482928_396641540460049_2613024859839528960_n.jpg")!,
                             KingfisherSource(urlString: "https://ig-s-b-a.akamaihd.net/hphotos-ak-xta1/t51.2885-15/e35/10251507_268890833291947_1265792874_n.jpg")!,]
+    */
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,8 @@ class ViewController: UIViewController {
             }
         }
         
-        slideshow.setImageInputs(kingfisherSource)
+        getMore()
+        //slideshow.setImageInputs(kingfisherSource)
 
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.didTap))
         slideshow.addGestureRecognizer(recognizer)
