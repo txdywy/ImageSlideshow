@@ -10,7 +10,7 @@ import UIKit
 import ImageSlideshow
 import GoogleMobileAds
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GADInterstitialDelegate {
 
     open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     let semaphore = DispatchSemaphore(value: 0)
     
     var names = [] as [String]
+    
+    var interstitial: GADInterstitial!
     
     let url=URL(string:"https://mei12356.com/ios")
   
@@ -39,6 +41,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitial = createAndLoadInterstitial()
 
         slideshow.backgroundColor = UIColor.white
         slideshow.slideshowInterval = 5.0
@@ -51,13 +55,20 @@ class ViewController: UIViewController {
             print("ww", self.slideshow.images.count)
             if page == self.slideshow.images.count - 1{
                 self.getMore()
+                if page % 20 == 4{
+                    self.showX()
+                }
             }
         }
+        
+        interstitial = createAndLoadInterstitial()
         
         self.getMore()
         bannerView.adUnitID = "ca-app-pub-7366328858638561/2735123532"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+        
+        showX()
         
         //slideshow.setImageInputs(kingfisherSource)
 
@@ -67,6 +78,25 @@ class ViewController: UIViewController {
 
     func didTap() {
         slideshow.presentFullScreenController(from: self)
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-7366328858638561/5688589939")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func interstitialDidDismissScreen(ad: GADInterstitial!) {
+        interstitial = createAndLoadInterstitial()
+    }
+    
+    func showX() {
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+            interstitial = createAndLoadInterstitial()
+        }
+        // Rest of game over logic goes here.
     }
     
     func getMore() {
