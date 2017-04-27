@@ -7,4 +7,6 @@ target 'ImageSlideshow_Example' do
     pod "ImageSlideshow/Alamofire", :path => "../"
     pod "ImageSlideshow/SDWebImage", :path => "../"
     pod "ImageSlideshow/Kingfisher", :path => "../"
+    pod "Firebase/Core"
+    pod "Firebase/AdMob"
 end
