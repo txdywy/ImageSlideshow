@@ -34,6 +34,22 @@
                                     <constraint firstAttribute="width" constant="320" id="YMf-DY-USl"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA5-Du-qLj">
+                                <rect key="frame" x="107" y="0.0" width="161" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="001n"/>
+                                <connections>
+                                    <action selector="downNoButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="koN-1s-cuW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86G-Lh-hbc">
+                                <rect key="frame" x="104" y="433" width="166" height="163"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="001y"/>
+                                <connections>
+                                    <action selector="downYesButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="TCB-BL-vzP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -43,14 +59,20 @@
                     </view>
                     <connections>
                         <outlet property="bannerView" destination="p5t-Hj-wDk" id="G39-zN-DEa"/>
+                        <outlet property="noButton" destination="xA5-Du-qLj" id="OKc-C6-NbJ"/>
                         <outlet property="slideshow" destination="L16-jC-HJe" id="vzm-Jx-I68"/>
+                        <outlet property="yesButton" destination="86G-Lh-hbc" id="VMH-TF-lUm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200" y="298"/>
+            <point key="canvasLocation" x="199.5" y="297.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="001n" width="305" height="318"/>
+        <image name="001y" width="330" height="317"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

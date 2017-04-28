@@ -19,6 +19,10 @@ class ViewController: UIViewController, GADInterstitialDelegate {
     @IBOutlet var slideshow: ImageSlideshow!
     @IBOutlet weak var bannerView: GADBannerView!
     
+    @IBOutlet weak var noButton: UIButton!
+    
+    @IBOutlet weak var yesButton: UIButton!
+    
     let semaphore = DispatchSemaphore(value: 0)
     
     var names = [] as [String]
@@ -76,6 +80,14 @@ class ViewController: UIViewController, GADInterstitialDelegate {
         slideshow.addGestureRecognizer(recognizer)
     }
 
+    @IBAction func downNoButton(_ sender: Any) {
+        print("nonono")
+    }
+    
+    @IBAction func downYesButton(_ sender: Any) {
+        print("YesYes")
+    }
+    
     func didTap() {
         slideshow.presentFullScreenController(from: self)
     }
