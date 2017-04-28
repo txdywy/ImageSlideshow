@@ -81,10 +81,12 @@ class ViewController: UIViewController, GADInterstitialDelegate {
     }
 
     @IBAction func downNoButton(_ sender: Any) {
+        self.getPin(m: "n", k: String(slideshow.currentPage))
         print("nonono")
     }
     
     @IBAction func downYesButton(_ sender: Any) {
+        self.getPin(m: "n", k: String(slideshow.currentPage))
         print("YesYes")
     }
     
@@ -187,5 +189,23 @@ class ViewController: UIViewController, GADInterstitialDelegate {
             }.resume()
         
         //_ = semaphore.wait(timeout: DispatchTime.distantFuture)
+    }
+    
+    func getPin(m:String, k: String) {
+        let url=URL(string:"https://mei12356.com/pin?m=\(m)&p=\(k)")
+        URLSession.shared.dataTask(with:url!) { (data, response, error) in
+            if error != nil {
+                print(error!)
+            } else {
+                do {
+                    print(m, k, data)
+                    
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+            
+            }.resume()
+
     }
 }
