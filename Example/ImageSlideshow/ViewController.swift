@@ -55,7 +55,7 @@ class ViewController: UIViewController, GADInterstitialDelegate {
             print("ww", self.slideshow.images.count)
             if page == self.slideshow.images.count - 1{
                 self.getMore()
-                if page % 20 == 4{
+                if page % 80 == 4 && page > 50{
                     self.showX()
                 }
             }
