@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L16-jC-HJe" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L16-jC-HJe" customClass="ImageSlideshow" customModule="ImageSlideshow">
                                 <rect key="frame" x="10" y="174" width="355" height="260"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5t-Hj-wDk" customClass="GADBannerView">
@@ -34,17 +35,21 @@
                                     <constraint firstAttribute="width" constant="320" id="YMf-DY-USl"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA5-Du-qLj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA5-Du-qLj">
                                 <rect key="frame" x="107" y="0.0" width="161" height="173"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xA5-Du-qLj" secondAttribute="height" multiplier="161:173" id="AI0-j5-WY4"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="001n"/>
                                 <connections>
                                     <action selector="downNoButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="koN-1s-cuW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86G-Lh-hbc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86G-Lh-hbc">
                                 <rect key="frame" x="104" y="433" width="166" height="163"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="86G-Lh-hbc" secondAttribute="height" multiplier="166:163" id="ynd-wl-hzi"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="001y"/>
                                 <connections>
                                     <action selector="downYesButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="TCB-BL-vzP"/>
@@ -53,8 +58,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="p5t-Hj-wDk" firstAttribute="top" secondItem="86G-Lh-hbc" secondAttribute="bottom" constant="21" id="087-8n-uhA"/>
+                            <constraint firstItem="L16-jC-HJe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-6" id="2Jd-ZR-6e5"/>
+                            <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="5cU-kX-a8v"/>
+                            <constraint firstItem="86G-Lh-hbc" firstAttribute="centerX" secondItem="L16-jC-HJe" secondAttribute="centerX" id="9x8-Ns-rU1"/>
+                            <constraint firstItem="L16-jC-HJe" firstAttribute="top" secondItem="xA5-Du-qLj" secondAttribute="bottom" constant="1" id="GER-f2-p7p"/>
+                            <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="86G-Lh-hbc" secondAttribute="centerX" id="GdY-o5-RmV"/>
                             <constraint firstItem="Lha-qV-nkd" firstAttribute="top" secondItem="p5t-Hj-wDk" secondAttribute="bottom" id="Ggv-ud-An9"/>
-                            <constraint firstItem="p5t-Hj-wDk" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="PFX-bE-NXn"/>
+                            <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="L16-jC-HJe" secondAttribute="centerX" id="Gnz-gE-0DS"/>
+                            <constraint firstItem="86G-Lh-hbc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="88" id="LcX-06-1nn"/>
+                            <constraint firstItem="xA5-Du-qLj" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Mpq-Aj-DL7"/>
+                            <constraint firstAttribute="bottom" secondItem="L16-jC-HJe" secondAttribute="bottom" constant="233" id="PMU-dx-Yno"/>
+                            <constraint firstItem="xA5-Du-qLj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="91" id="uE8-PT-daC"/>
+                            <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="p5t-Hj-wDk" secondAttribute="centerX" id="ugG-nn-88h"/>
                         </constraints>
                     </view>
                     <connections>
