@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4971701EB8313500616436 /* bubble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A49716F1EB8313500616436 /* bubble.mp3 */; };
 		3ACE81CF1EB1E8CF00CEDDDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE81CE1EB1E8CF00CEDDDF /* GoogleService-Info.plist */; };
 		48A9DE9233FBEA3CF63A8E54 /* Pods_ImageSlideshow_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA07A6EDAC622F1407E6C80 /* Pods_ImageSlideshow_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		09417F1351C21E0DCE8667BE /* Pods-ImageSlideshow_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSlideshow_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageSlideshow_Example/Pods-ImageSlideshow_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1C4985EDB005E63A830176CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3A49716F1EB8313500616436 /* bubble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bubble.mp3; sourceTree = "<group>"; };
 		3ACE81CE1EB1E8CF00CEDDDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FD91AF3667236846934E8B9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ImageSlideshow_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSlideshow_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				3A49716F1EB8313500616436 /* bubble.mp3 */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for ImageSlideshow";
@@ -322,6 +325,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				3ACE81CF1EB1E8CF00CEDDDF /* GoogleService-Info.plist in Resources */,
+				3A4971701EB8313500616436 /* bubble.mp3 in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);

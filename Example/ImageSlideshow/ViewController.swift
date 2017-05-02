@@ -9,6 +9,7 @@
 import UIKit
 import ImageSlideshow
 import GoogleMobileAds
+import AVFoundation
 
 class ViewController: UIViewController, GADInterstitialDelegate {
 
@@ -22,6 +23,8 @@ class ViewController: UIViewController, GADInterstitialDelegate {
     @IBOutlet weak var noButton: UIButton!
     
     @IBOutlet weak var yesButton: UIButton!
+    
+    var bubbleSound: SystemSoundID!
     
     let semaphore = DispatchSemaphore(value: 0)
     
@@ -67,6 +70,8 @@ class ViewController: UIViewController, GADInterstitialDelegate {
         
         interstitial = createAndLoadInterstitial()
         
+        bubbleSound = createBubbleSound()
+        
         self.getMore()
         bannerView.adUnitID = "ca-app-pub-7366328858638561/2735123532"
         bannerView.rootViewController = self
@@ -81,13 +86,42 @@ class ViewController: UIViewController, GADInterstitialDelegate {
     }
 
     @IBAction func downNoButton(_ sender: Any) {
+        AudioServicesPlaySystemSound(bubbleSound)
         self.getPin(m: "n", k: String(slideshow.currentPage))
+        noButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.noButton.transform = .identity
+            },
+                       completion: nil)
         print("nonono")
     }
     
     @IBAction func downYesButton(_ sender: Any) {
+        AudioServicesPlaySystemSound(bubbleSound)
         self.getPin(m: "n", k: String(slideshow.currentPage))
+        yesButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.yesButton.transform = .identity
+            },
+                       completion: nil)
         print("YesYes")
+    }
+    
+    func createBubbleSound() -> SystemSoundID {
+        var soundID: SystemSoundID = 0
+        let soundURL = CFBundleCopyResourceURL(CFBundleGetMainBundle(), "bubble" as CFString!, "mp3" as CFString!, nil)
+        AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+        return soundID
     }
     
     func didTap() {
