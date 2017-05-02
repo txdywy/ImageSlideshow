@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,36 +23,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L16-jC-HJe" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="10" y="174" width="355" height="260"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L16-jC-HJe" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="10" y="194" width="355" height="260"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5t-Hj-wDk" customClass="GADBannerView">
-                                <rect key="frame" x="27" y="617" width="320" height="50"/>
+                                <rect key="frame" x="39" y="617" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="V8a-sO-iAF"/>
                                     <constraint firstAttribute="width" constant="320" id="YMf-DY-USl"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA5-Du-qLj">
-                                <rect key="frame" x="107" y="0.0" width="161" height="173"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="xA5-Du-qLj" secondAttribute="height" multiplier="161:173" id="AI0-j5-WY4"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="001n"/>
-                                <connections>
-                                    <action selector="downNoButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="koN-1s-cuW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86G-Lh-hbc">
-                                <rect key="frame" x="104" y="433" width="166" height="163"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86G-Lh-hbc">
+                                <rect key="frame" x="104" y="446" width="166" height="163"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="86G-Lh-hbc" secondAttribute="height" multiplier="166:163" id="ynd-wl-hzi"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="001y"/>
                                 <connections>
                                     <action selector="downYesButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="TCB-BL-vzP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA5-Du-qLj">
+                                <rect key="frame" x="104" y="37" width="166" height="163"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="163" id="9oh-sk-8sr"/>
+                                    <constraint firstAttribute="width" secondItem="xA5-Du-qLj" secondAttribute="height" multiplier="166:163" id="AI0-j5-WY4"/>
+                                    <constraint firstAttribute="width" constant="166" id="qTE-py-oOM"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="001n"/>
+                                <connections>
+                                    <action selector="downNoButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="koN-1s-cuW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,10 +68,10 @@
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="86G-Lh-hbc" secondAttribute="centerX" id="GdY-o5-RmV"/>
                             <constraint firstItem="Lha-qV-nkd" firstAttribute="top" secondItem="p5t-Hj-wDk" secondAttribute="bottom" id="Ggv-ud-An9"/>
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="L16-jC-HJe" secondAttribute="centerX" id="Gnz-gE-0DS"/>
-                            <constraint firstItem="86G-Lh-hbc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="88" id="LcX-06-1nn"/>
-                            <constraint firstItem="xA5-Du-qLj" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Mpq-Aj-DL7"/>
-                            <constraint firstAttribute="bottom" secondItem="L16-jC-HJe" secondAttribute="bottom" constant="233" id="PMU-dx-Yno"/>
-                            <constraint firstItem="xA5-Du-qLj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="91" id="uE8-PT-daC"/>
+                            <constraint firstItem="86G-Lh-hbc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="100" id="LcX-06-1nn"/>
+                            <constraint firstItem="xA5-Du-qLj" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="30" id="Mpq-Aj-DL7"/>
+                            <constraint firstItem="L16-jC-HJe" firstAttribute="bottom" secondItem="86G-Lh-hbc" secondAttribute="top" id="Pve-fv-rRS"/>
+                            <constraint firstItem="xA5-Du-qLj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="100" id="uE8-PT-daC"/>
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="p5t-Hj-wDk" secondAttribute="centerX" id="ugG-nn-88h"/>
                         </constraints>
                     </view>
