@@ -11,7 +11,7 @@ import ImageSlideshow
 import GoogleMobileAds
 import AVFoundation
 
-class ViewController: UIViewController, GADInterstitialDelegate {
+class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
 
     open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
@@ -79,6 +79,9 @@ class ViewController: UIViewController, GADInterstitialDelegate {
         
         showX()
         
+        let poiter = CGPoint(x: UIScreen.main.bounds.width * 0.85, y: UIScreen.main.bounds.height - 20)
+        addParticleEffect(poiter)
+        
         //slideshow.setImageInputs(kingfisherSource)
 
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.didTap))
@@ -115,6 +118,10 @@ class ViewController: UIViewController, GADInterstitialDelegate {
             },
                        completion: nil)
         print("YesYes")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        removeParticleEffect()
     }
     
     func createBubbleSound() -> SystemSoundID {
