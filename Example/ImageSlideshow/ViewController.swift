@@ -102,7 +102,8 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
             },
                        completion: nil)
         print("nonono")
-        addParticleEffectOnce(index: "7")
+        let index: String = String(arc4random_uniform(4) + 5)
+        addParticleEffectOnce(index: index)
     }
     
     @IBAction func downYesButton(_ sender: Any) {
@@ -119,7 +120,8 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
             },
                        completion: nil)
         print("YesYes")
-        addParticleEffectOnce(index: "2", up: false)
+        let index: String = String(arc4random_uniform(4))
+        addParticleEffectOnce(index: index, up: false)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
