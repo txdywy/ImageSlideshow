@@ -28,6 +28,8 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
     
     let semaphore = DispatchSemaphore(value: 0)
     
+    let img: UIImage = UIImage(named: "001n.png")!
+    
     var names = [] as [String]
     
     var interstitial: GADInterstitial!
@@ -174,7 +176,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
             
             for index in 0...names.count-1 {
                 
-                kSource.append(KingfisherSource(urlString: names[index])!)
+                kSource.append(KingfisherSource(urlString: names[index], placeholder: img)!)
             }
             
             //self.kingfisherSource.append(KingfisherSource(urlString: parsedData!)!)
@@ -215,7 +217,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
                     var kSource = [] as! [KingfisherSource]
                     for index in 0...names.count-1 {
                         
-                        kSource.append(KingfisherSource(urlString: names[index])!)
+                        kSource.append(KingfisherSource(urlString: names[index], placeholder: self.img)!)
                     }
                     
                     //self.kingfisherSource.append(KingfisherSource(urlString: parsedData!)!)
@@ -252,4 +254,5 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
             }.resume()
 
     }
+    
 }
