@@ -52,7 +52,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         interstitial = createAndLoadInterstitial()
 
         slideshow.backgroundColor = UIColor.white
-        slideshow.slideshowInterval = 5.0
+        slideshow.slideshowInterval = 10.0
         slideshow.pageControlPosition = PageControlPosition.underScrollView
         slideshow.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
         slideshow.pageControl.pageIndicatorTintColor = UIColor.black
@@ -79,8 +79,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         
         showX()
         
-        let poiter = CGPoint(x: UIScreen.main.bounds.width * 0.85, y: UIScreen.main.bounds.height - 20)
-        addParticleEffect(poiter)
+        addParticleEffect()
         
         //slideshow.setImageInputs(kingfisherSource)
 

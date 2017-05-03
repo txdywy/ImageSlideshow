@@ -7,7 +7,7 @@ protocol Particleable {
 }
 
 extension Particleable where Self : UIViewController {
-    func addParticleEffect(_ point : CGPoint = CGPoint(x: UIScreen.main.bounds.width * 0.85, y: UIScreen.main.bounds.height - 20) )  {
+    func addParticleEffect(_ point : CGPoint = CGPoint(x: UIScreen.main.bounds.width * 0.5, y: UIScreen.main.bounds.height - 20) )  {
         // 1.创建发射器
         let emitter = CAEmitterLayer()
         // 2.发射器位置
@@ -42,7 +42,7 @@ extension Particleable where Self : UIViewController {
         // 5.将粒子添加到发射器中
         emitter.emitterCells = cells
         view.layer.addSublayer(emitter)
-        delay(5) {
+        delay(10) {
             emitter.birthRate = 0
         }
     }
