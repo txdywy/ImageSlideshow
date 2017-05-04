@@ -72,7 +72,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
             self.slideshow.slideshowInterval = self.interval
             if page == self.slideshow.images.count - 1{
                 self.getMore()
-                if page % 80 == 4 && page > 50{
+                if page % 30 == 4 && page > 10{
                     self.showX()
                 }
             }
