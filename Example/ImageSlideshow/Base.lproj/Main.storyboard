@@ -28,7 +28,7 @@
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5t-Hj-wDk" customClass="GADBannerView">
-                                <rect key="frame" x="27" y="617" width="320" height="50"/>
+                                <rect key="frame" x="39" y="617" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="V8a-sO-iAF"/>
@@ -70,7 +70,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="p5t-Hj-wDk" firstAttribute="top" secondItem="86G-Lh-hbc" secondAttribute="bottom" constant="21" id="087-8n-uhA"/>
                             <constraint firstItem="L16-jC-HJe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-6" id="2Jd-ZR-6e5"/>
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="5cU-kX-a8v"/>
                             <constraint firstItem="86G-Lh-hbc" firstAttribute="centerX" secondItem="L16-jC-HJe" secondAttribute="centerX" id="9x8-Ns-rU1"/>
