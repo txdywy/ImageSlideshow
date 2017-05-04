@@ -18,11 +18,16 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
     }
 
     @IBOutlet var slideshow: ImageSlideshow!
+    
     @IBOutlet weak var bannerView: GADBannerView!
     
     @IBOutlet weak var noButton: UIButton!
     
     @IBOutlet weak var yesButton: UIButton!
+    
+    @IBOutlet weak var countDown: UILabel!
+    
+    var counterDown:Int = 16
     
     var bubbleSound: SystemSoundID!
     
@@ -71,6 +76,8 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
                     self.showX()
                 }
             }
+            self.counterDown = Int(self.slideshow.slideshowInterval)
+            
         }
         
         interstitial = createAndLoadInterstitial()
@@ -86,10 +93,19 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         
         addParticleEffect()
         
+        _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
+        
         //slideshow.setImageInputs(kingfisherSource)
 
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.didTap))
         slideshow.addGestureRecognizer(recognizer)
+    }
+    
+    func update() {
+        if(counterDown > 0) {
+            counterDown -= 1
+            countDown.text = String(counterDown) + "s"
+        }
     }
 
     @IBAction func downNoButton(_ sender: Any) {
@@ -109,6 +125,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         let index: String = String(arc4random_uniform(4) + 5)
         addParticleEffectOnce(index: index)
         slideshow.slideshowInterval = slideshow.slideshowInterval / 2
+        self.counterDown = Int(slideshow.slideshowInterval)
     }
     
     @IBAction func downYesButton(_ sender: Any) {
@@ -128,6 +145,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         let index: String = String(arc4random_uniform(4))
         addParticleEffectOnce(index: index, up: false)
         slideshow.slideshowInterval = slideshow.slideshowInterval + 5
+        self.counterDown = Int(slideshow.slideshowInterval)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

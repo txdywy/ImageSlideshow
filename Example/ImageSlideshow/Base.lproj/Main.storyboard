@@ -28,7 +28,7 @@
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5t-Hj-wDk" customClass="GADBannerView">
-                                <rect key="frame" x="39" y="617" width="320" height="50"/>
+                                <rect key="frame" x="27" y="617" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="V8a-sO-iAF"/>
@@ -57,6 +57,16 @@
                                     <action selector="downNoButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="koN-1s-cuW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Next:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyt-hc-mKJ">
+                                <rect key="frame" x="278" y="462" width="87" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="OIJ-7r-1ub"/>
+                                    <constraint firstAttribute="width" constant="87" id="sQ2-8e-mPJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.55744066969001504" blue="0.20949391789027838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -65,18 +75,24 @@
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="5cU-kX-a8v"/>
                             <constraint firstItem="86G-Lh-hbc" firstAttribute="centerX" secondItem="L16-jC-HJe" secondAttribute="centerX" id="9x8-Ns-rU1"/>
                             <constraint firstItem="L16-jC-HJe" firstAttribute="top" secondItem="xA5-Du-qLj" secondAttribute="bottom" constant="1" id="GER-f2-p7p"/>
+                            <constraint firstItem="Wyt-hc-mKJ" firstAttribute="top" secondItem="L16-jC-HJe" secondAttribute="bottom" constant="8" symbolic="YES" id="GMA-zR-axU"/>
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="86G-Lh-hbc" secondAttribute="centerX" id="GdY-o5-RmV"/>
                             <constraint firstItem="Lha-qV-nkd" firstAttribute="top" secondItem="p5t-Hj-wDk" secondAttribute="bottom" id="Ggv-ud-An9"/>
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="L16-jC-HJe" secondAttribute="centerX" id="Gnz-gE-0DS"/>
+                            <constraint firstItem="Wyt-hc-mKJ" firstAttribute="trailing" secondItem="L16-jC-HJe" secondAttribute="trailing" id="L4Z-N1-XOM"/>
+                            <constraint firstItem="Wyt-hc-mKJ" firstAttribute="leading" secondItem="86G-Lh-hbc" secondAttribute="trailing" constant="8" symbolic="YES" id="L70-Ou-gZa"/>
                             <constraint firstItem="86G-Lh-hbc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="100" id="LcX-06-1nn"/>
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="30" id="Mpq-Aj-DL7"/>
                             <constraint firstItem="L16-jC-HJe" firstAttribute="bottom" secondItem="86G-Lh-hbc" secondAttribute="top" id="Pve-fv-rRS"/>
+                            <constraint firstAttribute="bottom" secondItem="Wyt-hc-mKJ" secondAttribute="bottom" constant="168" id="pwg-jg-n1Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wyt-hc-mKJ" secondAttribute="trailing" constant="-6" id="r2B-N7-Qjc"/>
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="100" id="uE8-PT-daC"/>
                             <constraint firstItem="xA5-Du-qLj" firstAttribute="centerX" secondItem="p5t-Hj-wDk" secondAttribute="centerX" id="ugG-nn-88h"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bannerView" destination="p5t-Hj-wDk" id="G39-zN-DEa"/>
+                        <outlet property="countDown" destination="Wyt-hc-mKJ" id="9sc-kX-MH1"/>
                         <outlet property="noButton" destination="xA5-Du-qLj" id="OKc-C6-NbJ"/>
                         <outlet property="slideshow" destination="L16-jC-HJe" id="vzm-Jx-I68"/>
                         <outlet property="yesButton" destination="86G-Lh-hbc" id="VMH-TF-lUm"/>
