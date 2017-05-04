@@ -28,7 +28,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
     
     let semaphore = DispatchSemaphore(value: 0)
     
-    let img: UIImage = UIImage(named: "001n.png")!
+    let img: UIImage = UIImage(named: "load.jpg")!
     
     var names = [] as [String]
     
