@@ -30,6 +30,8 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
     
     let img: UIImage = UIImage(named: "load.jpg")!
     
+    let interval: Double = 16
+    
     var names = [] as [String]
     
     var interstitial: GADInterstitial!
@@ -54,7 +56,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         interstitial = createAndLoadInterstitial()
 
         slideshow.backgroundColor = UIColor.white
-        slideshow.slideshowInterval = 10.0
+        slideshow.slideshowInterval = self.interval
         slideshow.pageControlPosition = PageControlPosition.underScrollView
         slideshow.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
         slideshow.pageControl.pageIndicatorTintColor = UIColor.black
@@ -62,6 +64,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         slideshow.currentPageChanged = { page in
             print("current page:", page)
             print("ww", self.slideshow.images.count)
+            self.slideshow.slideshowInterval = self.interval
             if page == self.slideshow.images.count - 1{
                 self.getMore()
                 if page % 80 == 4 && page > 50{
@@ -105,6 +108,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         print("nonono")
         let index: String = String(arc4random_uniform(4) + 5)
         addParticleEffectOnce(index: index)
+        slideshow.slideshowInterval = slideshow.slideshowInterval / 2
     }
     
     @IBAction func downYesButton(_ sender: Any) {
@@ -123,6 +127,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         print("YesYes")
         let index: String = String(arc4random_uniform(4))
         addParticleEffectOnce(index: index, up: false)
+        slideshow.slideshowInterval = slideshow.slideshowInterval + 5
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
