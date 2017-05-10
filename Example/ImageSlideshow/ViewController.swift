@@ -80,8 +80,6 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
             
         }
         
-        interstitial = createAndLoadInterstitial()
-        
         bubbleSound = createBubbleSound()
         
         self.getMore()
