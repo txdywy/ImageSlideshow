@@ -83,7 +83,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
         bubbleSound = createBubbleSound()
         
         self.getMore()
-        bannerView.adUnitID = "ca-app-pub-7366328858638561/2735123532"
+        bannerView.adUnitID = "ca-app-pub-9941563777656289/6993728858"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         
@@ -162,7 +162,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, Particleable {
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {
-        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-7366328858638561/5688589939")
+        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-9941563777656289/8470462054")
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
